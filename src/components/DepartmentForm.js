@@ -64,6 +64,7 @@ class DepartmentForm extends Component {
           ? <Errors errors={errors} removeError={removeError} />
           : null }
         <TextFieldGroup
+          autofocus
           type="text"
           name="department"
           label="Department"

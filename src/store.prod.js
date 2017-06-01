@@ -10,7 +10,7 @@ import rootSaga from './sagas/index';
 const sagaMiddleware = createSagaMiddleware();
 export const history = createHistory();
 const router = routerMiddleware(history);
-const enhancers = applyMiddleware(sagaMiddleware, thunk, router)
+const enhancers = applyMiddleware(sagaMiddleware, thunk, router);
 const defaultState = {};
 const store = createStore(rootReducer, defaultState, enhancers);
 

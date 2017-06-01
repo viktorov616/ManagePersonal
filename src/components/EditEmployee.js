@@ -90,7 +90,7 @@ export default class EditEmployee extends Component {
       id,
       firstName: form.firstName,
       lastName: form.lastName,
-      departmentId: +form.departmentId,
+      departmentId: form.departmentId,
     };
 
     save(employee, number);
@@ -166,7 +166,7 @@ export default class EditEmployee extends Component {
 }
 
 EditEmployee.propTypes = {
-  departmentId: PropTypes.number,
+  departmentId: PropTypes.string,
   departments: PropTypes.object.isRequired,
   close: PropTypes.func.isRequired,
   closeConfirmVisible: PropTypes.bool.isRequired,

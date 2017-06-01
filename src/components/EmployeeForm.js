@@ -67,6 +67,7 @@ class EmployeeForm extends Component {
           ? <Errors errors={errors} removeError={removeError} />
           : null }
         <TextFieldGroup
+          autofocus
           type="text"
           name="firstName"
           label="First Name"

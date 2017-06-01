@@ -4,11 +4,17 @@ import { Errors, Control } from 'react-redux-form';
 import classNames from 'classnames';
 
 export default function TextFieldGroup({
-  focus, label, name, type, valid, retouched, validationMessages,
+  autofocus, focus, label, name, type, valid, retouched, validationMessages,
 }) {
   return (<div className={classNames('form-group', { 'has-error': !valid && !retouched && !focus })}>
     <label htmlFor={name} className="control-label">{ label }</label>
-    <Control model={`.${name}`} type={type} name={name} className="form-control" />
+    <Control
+      autoFocus={autofocus}
+      model={`.${name}`}
+      type={type}
+      name={name}
+      className="form-control"
+    />
     <Errors
       model={`.${name}`}
       messages={validationMessages}
@@ -19,6 +25,7 @@ export default function TextFieldGroup({
 }
 
 TextFieldGroup.propTypes = {
+  autofocus: PropTypes.bool,
   focus: PropTypes.bool.isRequired,
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
@@ -26,4 +33,8 @@ TextFieldGroup.propTypes = {
   valid: PropTypes.bool.isRequired,
   retouched: PropTypes.bool.isRequired,
   validationMessages: PropTypes.object.isRequired,
+};
+
+TextFieldGroup.defaultProps = {
+  autofocus: false,
 };
